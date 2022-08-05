@@ -1,0 +1,11 @@
+{
+    "name": "igoragatti/drushextra",
+    "type": "library",
+    "description": "Some extra useful drush commands.",
+    "homepage": "https://github.com/igoragatti/drushextra",
+    "autoload": {
+        "psr-4": {
+            "DrushExtra\\": "src/"
+        }
+    }
+}

@@ -1,0 +1,20 @@
+name: {{appname}}
+recipe: drupal9
+config:
+  php: 7.4
+services:
+  appserver:
+    webroot: /web
+    xdebug: true
+    config:
+      php: .lando/php.ini
+    overrides:
+      environment:
+        PHP_IDE_CONFIG: "serverName=appserver"
+        DRUSH_OPTIONS_URI: 'https://drupal9.lndo.site'
+  solr:
+    type: solr:7
+    portforward: true
+    core: lando
+    config:
+      dir: .lando/solr_conf
