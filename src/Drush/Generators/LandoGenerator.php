@@ -20,7 +20,15 @@ class LandoGenerator extends Generator {
    */
   protected function generate(array &$vars): void {
     $vars['appname'] = $this->ask('App name', 'example');
-    $this->addFile('lando2.yml', 'lando');
+    $choices = [
+      "7.4" => "7.4",
+      "8.0" => "8.0",
+      "8.1" => "8.1",
+    ];
+    $vars['phpversion'] = $this->choice('PHP version', $choices, '8.0');
+    $vars['webroot'] = $this->ask('Web root', "web");
+    $this->addFile('../.lando2.yml', 'lando');
+    $this->addFile('../lando/php.ini', 'phpini');
   }
 
 }
