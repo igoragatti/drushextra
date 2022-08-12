@@ -27,7 +27,7 @@ class LandoGenerator extends Generator {
     ];
     $vars['phpversion'] = $this->choice('PHP version', $choices, '8.0');
     $vars['webroot'] = $this->ask('Web root', "web");
-    $this->addFile('../.lando2.yml', 'lando');
+    $this->addFile('../.lando.yml', 'lando');
     $this->addFile('../lando/php.ini', 'phpini');
   }
 
